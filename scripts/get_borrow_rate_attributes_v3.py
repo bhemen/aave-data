@@ -5,7 +5,7 @@ from web3.providers.rpc import HTTPProvider
 from utils import get_cached_abi
 import progressbar
 
-api_url = "" # your api here
+api_url = "http://localhost:8545" # your api here
 provider = HTTPProvider(api_url)
 web3 = Web3(provider)
 

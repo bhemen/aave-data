@@ -13028,3 +13028,7 @@ Error calling getReserveData at 10486030 for asset UST
 Error calling getReserveData at 10486030 for asset CVX
 Error calling getReserveData at 10486030 for asset 1INCH
 Error calling getReserveData at 10486030 for asset LUSD
+Error calling getReserveData at 17032087 for asset WETH
+Error calling getReserveData at 17032087 for asset AAVE
+Error calling getReserveData at 17032087 for asset ENJ
+Error calling getReserveData at 17032087 for asset YFI
