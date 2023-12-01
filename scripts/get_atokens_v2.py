@@ -4,7 +4,7 @@ from web3.providers.rpc import HTTPProvider
 from utils import get_cached_abi
 
 # Connect to Ethereum node
-api_url = 'https://mainnet.infura.io/v3/43480ee1e64147de963916215adaa3a8'
+api_url = '' #Put in your local node
 provider = HTTPProvider(api_url)
 web3 = Web3(provider)
 
