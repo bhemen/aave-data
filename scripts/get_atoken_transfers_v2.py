@@ -10,7 +10,7 @@ atoken_addresses = df['aTokenAddress']
 
 for symbol,address in zip(symbols, atoken_addresses):
     print(f"Grabbing token {symbol}" )
-    contract_address = Web3.toChecksumAddress(address)
+    contract_address = Web3.to_checksum_address(address)
     start_block = 9000000
     outfile = f"data/{symbol}_atoken_transfers.csv"
     scanned_events = 'all'

@@ -10,7 +10,7 @@ provider = HTTPProvider(api_url)
 web3 = Web3(provider)
 
 #AaveProtocolDataProvider Contract
-aave_protocol_data_provider = Web3.toChecksumAddress("0x7B4EB56E7CD4b454BA8ff71E4518426369a138a3")
+aave_protocol_data_provider = Web3.to_checksum_address("0x7B4EB56E7CD4b454BA8ff71E4518426369a138a3")
 aave_protocol_data_provider_abi = get_cached_abi( aave_protocol_data_provider )
 aave_protocol_data_provider_contract = web3.eth.contract( address=aave_protocol_data_provider, abi=aave_protocol_data_provider_abi )
 

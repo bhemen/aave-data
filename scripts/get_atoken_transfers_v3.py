@@ -13,7 +13,7 @@ deploy_blocks = [16496792, 16496795, 16496800, 16496802, 16496806, 16496808, 164
 
 for symbol, address, block in zip(symbols, atokens_addresses, deploy_blocks):
     print(f"Grabbing token {symbol}" )
-    contract_address = Web3.toChecksumAddress(address)
+    contract_address = Web3.to_checksum_address(address)
     start_block = block
     outfile = f"data/aave_v3_{symbol}_atoken_transfers.csv"
     scanned_events = 'all'

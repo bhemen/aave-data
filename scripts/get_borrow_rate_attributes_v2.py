@@ -11,12 +11,12 @@ provider = HTTPProvider(api_url)
 web3 = Web3(provider)
 
 #Get Aave V2 protocol data provider contract
-aave_protocol_data_provider_address = Web3.toChecksumAddress("0x057835Ad21a177dbdd3090bB1CAE03EaCF78Fc6d")
+aave_protocol_data_provider_address = Web3.to_checksum_address("0x057835Ad21a177dbdd3090bB1CAE03EaCF78Fc6d")
 aave_protocol_data_provider_abi = get_cached_abi( aave_protocol_data_provider_address )
 aave_protocol_data_provider_contract = web3.eth.contract( address=aave_protocol_data_provider_address, abi=aave_protocol_data_provider_abi )
 
 #Get Aave V2 lending pool contract
-aave_lending_pool_address = Web3.toChecksumAddress("0x7d2768dE32b0b80b7a3454c06BdAc94A69DDc7A9")
+aave_lending_pool_address = Web3.to_checksum_address("0x7d2768dE32b0b80b7a3454c06BdAc94A69DDc7A9")
 aave_lending_pool_abi = get_cached_abi(aave_lending_pool_address)
 aave_lending_pool_contract = web3.eth.contract( address=aave_lending_pool_address, abi=aave_lending_pool_abi)
 
@@ -50,7 +50,7 @@ with progressbar.ProgressBar(max_value=len(blocks)) as bar:
 
 			#Getting Interest Rate Strategy Contract using the getReserveData function of the Lending Pool Contract
 			try:
-				interest_rate_strategy_address = Web3.toChecksumAddress(aave_lending_pool_contract.functions.getReserveData(address).call(block_identifier=block_num)[-2])
+				interest_rate_strategy_address = Web3.to_checksum_address(aave_lending_pool_contract.functions.getReserveData(address).call(block_identifier=block_num)[-2])
 				interest_rate_strategy_abi = get_cached_abi(interest_rate_strategy_address)
 				interest_rate_strategy_contract = web3.eth.contract( address=interest_rate_strategy_address, abi=interest_rate_strategy_abi )
 			except Exception as e:

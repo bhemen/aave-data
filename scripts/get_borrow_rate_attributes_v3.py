@@ -10,11 +10,11 @@ provider = HTTPProvider(api_url)
 web3 = Web3(provider)
 
 #AaveProtocolDataProvider Contract
-aave_protocol_data_provider = Web3.toChecksumAddress("0x7B4EB56E7CD4b454BA8ff71E4518426369a138a3")
+aave_protocol_data_provider = Web3.to_checksum_address("0x7B4EB56E7CD4b454BA8ff71E4518426369a138a3")
 aave_protocol_data_provider_abi = get_cached_abi( aave_protocol_data_provider )
 aave_protocol_data_provider_contract = web3.eth.contract( address=aave_protocol_data_provider, abi=aave_protocol_data_provider_abi )
 
-aave_pool_address = Web3.toChecksumAddress("0x87870Bca3F3fD6335C3F4ce8392D69350B4fA4E2")
+aave_pool_address = Web3.to_checksum_address("0x87870Bca3F3fD6335C3F4ce8392D69350B4fA4E2")
 aave_pool_abi = get_cached_abi( aave_pool_address )
 aave_pool_contract = web3.eth.contract( address=aave_pool_address, abi=aave_pool_abi )
 
@@ -37,7 +37,7 @@ with progressbar.ProgressBar(max_value=len(blocks)) as bar:
 		block = web3.eth.get_block(block_num)
 		for symbol,address in reserve_tokens:
 			try:
-				interest_rate_strategy_address = Web3.toChecksumAddress(aave_pool_contract.functions.getReserveData(address).call(block_identifier=block_num)[-4])
+				interest_rate_strategy_address = Web3.to_checksum_address(aave_pool_contract.functions.getReserveData(address).call(block_identifier=block_num)[-4])
 				interest_rate_strategy_abi = get_cached_abi(interest_rate_strategy_address)
 				interest_rate_strategy_contract = web3.eth.contract( address=interest_rate_strategy_address, abi=interest_rate_strategy_abi )
 			except Exception as e:

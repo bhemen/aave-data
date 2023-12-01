@@ -8,7 +8,7 @@ def getContractEvents( contract_address, target_events, outfile, start_block=1,e
 	url="" #This should really only be run against a local node
 	w3 = Web3(Web3.HTTPProvider(url))
 
-	contract_address = Web3.toChecksumAddress(contract_address)
+	contract_address = Web3.to_checksum_address(contract_address)
 	latest_block = w3.eth.get_block_number()
 
 	if end_block == None:
@@ -123,7 +123,7 @@ if __name__ == '__main__':
 	contract_address = "0x7Fc66500c84A76Ad7e9c93437bFc5Ac33E2DDaE9" #AAVE token
 	contract_address = "0x1f9840a85d5af5bf1d1762f925bdaddc4201f984" #UNI token
 
-	contract_address = Web3.toChecksumAddress(contract_address)
+	contract_address = Web3.to_checksum_address(contract_address)
 	target_events = ['Transfer']
 
 	outfile = "data/uni_token_logs.csv"
