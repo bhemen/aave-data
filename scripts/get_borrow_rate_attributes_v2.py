@@ -2,7 +2,7 @@
 import pandas as pd
 from web3 import Web3
 from web3.providers.rpc import HTTPProvider
-from utils import get_cached_abi
+from utils import get_cached_abi, get_proxy_address
 import progressbar
 
 # Connect to Ethereum node
@@ -51,6 +51,7 @@ with progressbar.ProgressBar(max_value=len(blocks)) as bar:
 			#Getting Interest Rate Strategy Contract using the getReserveData function of the Lending Pool Contract
 			try:
 				interest_rate_strategy_address = Web3.to_checksum_address(aave_lending_pool_contract.functions.getReserveData(address).call(block_identifier=block_num)[-2])
+				interest_rate_strategy_address = get_proxy_address( web3, interest_rate_strategy_address )
 				interest_rate_strategy_abi = get_cached_abi(interest_rate_strategy_address)
 				interest_rate_strategy_contract = web3.eth.contract( address=interest_rate_strategy_address, abi=interest_rate_strategy_abi )
 			except Exception as e:
