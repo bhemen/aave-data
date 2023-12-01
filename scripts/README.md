@@ -19,12 +19,14 @@ These scripts are designed to scrape Aave data from an Ethereum archive node.  T
 
 Aave v2 provides a [Protocol Data Provider Contract](https://docs.aave.com/developers/v/2.0/the-core-protocol/protocol-data-provider) which provides many useful aggregate statistics.
 
-* [get_atokens.py](get_atokens.py) calls the function [getAllReservesTokens()](https://docs.aave.com/developers/v/2.0/the-core-protocol/protocol-data-provider#getallreservestokens) to get a list of all the reserve assets and their corresponding aTokens
-* [get_collateralization_meta.py](get_collateralization_meta.py) calls the function [getReserveConfigurationData](https://docs.aave.com/developers/v/2.0/the-core-protocol/protocol-data-provider#getreserveconfigurationdata) for each reserve asset provided by [getAllReservesTokens()](https://docs.aave.com/developers/v/2.0/the-core-protocol/protocol-data-provider#getallreservestokens)
-* [get_collateralization.py](get_collateralization.py) calls the function [getReserveData](https://docs.aave.com/developers/v/2.0/the-core-protocol/protocol-data-provider#getreservedata) for each reserve asset provided by [getAllReservesTokens()](https://docs.aave.com/developers/v/2.0/the-core-protocol/protocol-data-provider#getallreservestokens)
+* [get_atokens_v2.py](get_atokens_v2.py) calls the function [getAllReservesTokens()](https://docs.aave.com/developers/v/2.0/the-core-protocol/protocol-data-provider#getallreservestokens) to get a list of all the reserve assets and their corresponding aTokens.  It writes the resulting list to [aave_atokens_v2.csv](../data/aave_atokens_v2.csv).
+* [get_collateralization_meta_v2.py](get_collateralization_meta_v2.py) calls the function [getReserveConfigurationData](https://docs.aave.com/developers/v/2.0/the-core-protocol/protocol-data-provider#getreserveconfigurationdata) for each reserve asset provided by [getAllReservesTokens()](https://docs.aave.com/developers/v/2.0/the-core-protocol/protocol-data-provider#getallreservestokens)
+* [get_collateralization_v2.py](get_collateralization_v2.py) calls the function [getReserveData](https://docs.aave.com/developers/v/2.0/the-core-protocol/protocol-data-provider#getreservedata) for each reserve asset provided by [getAllReservesTokens()](https://docs.aave.com/developers/v/2.0/the-core-protocol/protocol-data-provider#getallreservestokens)
 
 ## V3
 
+Aave v3 provides a [Protocol Data Provider Contract]([https://docs.aave.com/developers/v/2.0/the-core-protocol/protocol-data-provider](https://docs.aave.com/developers/core-contracts/aaveprotocoldataprovider)https://docs.aave.com/developers/core-contracts/aaveprotocoldataprovider) which provides many useful aggregate statistics.
 
-
-
+* [get_atokens_v3.py](get_atokens_v3.py) calls the function [getAllReservesTokens()](https://docs.aave.com/developers/core-contracts/aaveprotocoldataprovider#getallreservestokens) to get a list of all the reserve assets and their corresponding aTokens.  It writes the resulting list to [aave_atokens_v3.csv](../data/aave_atokens_v3.csv).
+* [get_collateralization_meta_v3.py](get_collateralization_meta_v3.py) calls the function [getReserveConfigurationData](https://docs.aave.com/developers/core-contracts/aaveprotocoldataprovider#getreserveconfigurationdata) for each reserve asset provided by [getAllReservesTokens()](https://docs.aave.com/developers/v/2.0/the-core-protocol/protocol-data-provider#getallreservestokens)
+* [get_collateralization_v3.py](get_collateralization_v3.py) calls the function [getReserveData](https://docs.aave.com/developers/core-contracts/aaveprotocoldataprovider#getreservedata) for each reserve asset provided by [getAllReservesTokens()](https://docs.aave.com/developers/core-contracts/aaveprotocoldataprovider#getallreservestokens)
