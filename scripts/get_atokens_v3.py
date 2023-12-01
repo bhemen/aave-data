@@ -27,6 +27,6 @@ for symbol,address in reserve_tokens:
     rows.append(row)
 
 df = pd.DataFrame(rows)
-df.to_csv("aave_v3_atokens.csv",index=False)
+df.to_csv("aave_atokens_v3.csv",index=False)
 
 
