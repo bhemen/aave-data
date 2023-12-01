@@ -5,7 +5,7 @@ from web3.contract import Contract
 from web3.providers.rpc import HTTPProvider
 from utils import get_cached_abi
 
-api_url = "" # your api here
+api_url = "http://localhost:8545" # your api here
 provider = HTTPProvider(api_url)
 web3 = Web3(provider)
 
@@ -27,6 +27,6 @@ for symbol,address in reserve_tokens:
     rows.append(row)
 
 df = pd.DataFrame(rows)
-df.to_csv("aave_atokens_v3.csv",index=False)
+df.to_csv("../data/aave_atokens_v3.csv",index=False)
 
 
