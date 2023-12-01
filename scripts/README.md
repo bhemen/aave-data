@@ -4,7 +4,7 @@ These scripts are designed to scrape Aave data from an Ethereum archive node.  T
 
 1. We get historical balances by querying the Aave Protocol data provider contracts at historical block heights
 2. We get event data, by parsing the events emitted by different Aave contracts, using our tool [get_contract_logs.py](get_contract_logs.py), which grabs all the events emitted by a target contract
-   * [get_atoken_transfers_v2.py](get_atoken_transfers_v2.py) gets all the transfer events from all the Aave aTokens
+    * [get_atoken_transfers_v2.py](get_atoken_transfers_v2.py) gets all the transfer events from all the Aave aTokens
 
 ## V2
 
