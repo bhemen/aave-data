@@ -6,17 +6,17 @@ from utils import get_cached_abi, get_proxy_address
 import progressbar
 
 # Connect to Ethereum node
-api_url = "http://localhost:8545"
+api_url = ""
 provider = HTTPProvider(api_url)
 web3 = Web3(provider)
 
 #Get Aave V2 protocol data provider contract
-aave_protocol_data_provider_address = Web3.to_checksum_address("0x057835Ad21a177dbdd3090bB1CAE03EaCF78Fc6d")
+aave_protocol_data_provider_address = Web3.toChecksumAddress("0x057835Ad21a177dbdd3090bB1CAE03EaCF78Fc6d")
 aave_protocol_data_provider_abi = get_cached_abi( aave_protocol_data_provider_address )
 aave_protocol_data_provider_contract = web3.eth.contract( address=aave_protocol_data_provider_address, abi=aave_protocol_data_provider_abi )
 
 #Get Aave V2 lending pool contract
-aave_lending_pool_address = Web3.to_checksum_address("0x7d2768dE32b0b80b7a3454c06BdAc94A69DDc7A9")
+aave_lending_pool_address = Web3.toChecksumAddress("0x7d2768dE32b0b80b7a3454c06BdAc94A69DDc7A9")
 aave_lending_pool_abi = get_cached_abi(aave_lending_pool_address)
 aave_lending_pool_contract = web3.eth.contract( address=aave_lending_pool_address, abi=aave_lending_pool_abi)
 
@@ -50,10 +50,10 @@ with progressbar.ProgressBar(max_value=len(blocks)) as bar:
 
 			#Getting Interest Rate Strategy Contract using the getReserveData function of the Lending Pool Contract
 			try:
-				interest_rate_strategy_address = Web3.to_checksum_address(aave_lending_pool_contract.functions.getReserveData(address).call(block_identifier=block_num)[-2])
+				interest_rate_strategy_address = Web3.toChecksumAddress(aave_lending_pool_contract.functions.getReserveData(address).call(block_identifier=block_num)[-2])
 			except Exception as e:
 				with open( errorfile, "a" ) as f:
-					f.write( f"Error calling getReserveData at {block_num} for asset {symbol} on contract {lending_pool_contract.address}\n" )
+					f.write( f"Error calling getReserveData at {block_num} for asset {symbol} on contract {aave_lending_pool_address}\n" )
 				continue
 			try:
 				#interest_rate_strategy_address = get_proxy_address( web3, interest_rate_strategy_address )
@@ -64,94 +64,100 @@ with progressbar.ProgressBar(max_value=len(blocks)) as bar:
 					f.write( f"Error creating interest_rate_strategy_contract {interest_rate_strategy_address}" )
 				continue
 
-			#Calling EXCESS_UTILIZATION_RATE function from interest_rate_strategy_contract
-			try:
-				excessUtilizationRate = interest_rate_strategy_contract.functions.EXCESS_UTILIZATION_RATE().call(block_identifier=block_num)
-			except Exception as e:
-				with open( errorfile, "a" ) as f:
-					f.write( f"Error calling EXCESS_UTILIZATION_RATE at {block_num} for asset {symbol} on contract {interest_rate_strategy_contract.address}\n" )
-				continue
+			if interest_rate_strategy_abi is not None:
+				#Calling EXCESS_UTILIZATION_RATE function from interest_rate_strategy_contract
+				try:
+					excessUtilizationRate = interest_rate_strategy_contract.functions.EXCESS_UTILIZATION_RATE().call(block_identifier=block_num)
+				except Exception as e:
+					with open( errorfile, "a" ) as f:
+						f.write( f"Error calling EXCESS_UTILIZATION_RATE at {block_num} for asset {symbol} on contract {interest_rate_strategy_address}\n" )
+					continue
 
-			#Calling OPTIMAL_UTILIZATION_RATE function from interest_rate_strategy_contract
-			try:
-				optimalUtilizationRate = interest_rate_strategy_contract.functions.OPTIMAL_UTILIZATION_RATE().call(block_identifier=block_num)
-			except Exception as e:
-				with open( errorfile, "a" ) as f:
-					f.write( f"Error calling OPTIMAL_UTILIZATION_RATE at {block_num} for asset {symbol} on contract {interest_rate_strategy_contract.address}\n" )
-				continue
+				#Calling OPTIMAL_UTILIZATION_RATE function from interest_rate_strategy_contract
+				try:
+					optimalUtilizationRate = interest_rate_strategy_contract.functions.OPTIMAL_UTILIZATION_RATE().call(block_identifier=block_num)
+				except Exception as e:
+					with open( errorfile, "a" ) as f:
+						f.write( f"Error calling OPTIMAL_UTILIZATION_RATE at {block_num} for asset {symbol} on contract {interest_rate_strategy_address}\n" )
+					continue
 
-			#Calling addressesProvider function from interest_rate_strategy_contract
-			try:
-				addressesProvider = interest_rate_strategy_contract.functions.addressesProvider().call(block_identifier=block_num)
-			except Exception as e:
-				with open( errorfile, "a" ) as f:
-					f.write( f"Error calling addressesProvider at {block_num} for asset {symbol} on contract {interest_rate_strategy_contract.address}\n" )
-				continue
+				#Calling addressesProvider function from interest_rate_strategy_contract
+				try:
+					addressesProvider = interest_rate_strategy_contract.functions.addressesProvider().call(block_identifier=block_num)
+				except Exception as e:
+					with open( errorfile, "a" ) as f:
+						f.write( f"Error calling addressesProvider at {block_num} for asset {symbol} on contract {interest_rate_strategy_address}\n" )
+					continue
 
-			#Calling baseVariableBorrowRate function from interest_rate_strategy_contract
-			try:
-				baseVariableBorrowRate = interest_rate_strategy_contract.functions.baseVariableBorrowRate().call(block_identifier=block_num)
-			except Exception as e:
-				with open( errorfile, "a" ) as f:
-					f.write( f"Error calling baseVariableBorrowRate at {block_num} for asset {symbol} on contract {interest_rate_strategy_contract.address}\n" )
-				continue
+				#Calling baseVariableBorrowRate function from interest_rate_strategy_contract
+				try:
+					baseVariableBorrowRate = interest_rate_strategy_contract.functions.baseVariableBorrowRate().call(block_identifier=block_num)
+				except Exception as e:
+					with open( errorfile, "a" ) as f:
+						f.write( f"Error calling baseVariableBorrowRate at {block_num} for asset {symbol} on contract {interest_rate_strategy_address}\n" )
+					continue
 
-			#Calling getMaxVariableBorrowRate function from interest_rate_strategy_contract
-			try:
-				maxVariableBorrowRate = interest_rate_strategy_contract.functions.getMaxVariableBorrowRate().call(block_identifier=block_num)
-			except Exception as e:
-				with open( errorfile, "a" ) as f:
-					f.write( f"Error calling getMaxVariableBorrowRate at {block_num} for asset {symbol}\n" )
-				continue
+				#Calling getMaxVariableBorrowRate function from interest_rate_strategy_contract
+				try:
+					maxVariableBorrowRate = interest_rate_strategy_contract.functions.getMaxVariableBorrowRate().call(block_identifier=block_num)
+				except Exception as e:
+					with open( errorfile, "a" ) as f:
+						f.write( f"Error calling getMaxVariableBorrowRate at {block_num} for asset {symbol}\n" )
+					continue
 
-			#Calling stableRateSlope1 function from interest_rate_strategy_contract
-			try:
-				stableRateSlope1 = interest_rate_strategy_contract.functions.stableRateSlope1().call(block_identifier=block_num)
-			except Exception as e:
-				with open( errorfile, "a" ) as f:
-					f.write( f"Error calling stableRateSlope1 at {block_num} for asset {symbol}\n" )
-				continue
+				#Calling stableRateSlope1 function from interest_rate_strategy_contract
+				try:
+					stableRateSlope1 = interest_rate_strategy_contract.functions.stableRateSlope1().call(block_identifier=block_num)
+				except Exception as e:
+					with open( errorfile, "a" ) as f:
+						f.write( f"Error calling stableRateSlope1 at {block_num} for asset {symbol}\n" )
+					continue
 
-			#Calling stableRateSlope2 function from interest_rate_strategy_contract
-			try:
-				stableRateSlope2 = interest_rate_strategy_contract.functions.stableRateSlope2().call(block_identifier=block_num)
-			except Exception as e:
-				with open( errorfile, "a" ) as f:
-					f.write( f"Error calling stableRateSlope2 at {block_num} for asset {symbol}\n" )
-				continue
-			
-			#Calling variableRateSlope1 function from interest_rate_strategy_contract
-			try:
-				variableRateSlope1 = interest_rate_strategy_contract.functions.variableRateSlope1().call(block_identifier=block_num)
-			except Exception as e:
-				with open( errorfile, "a" ) as f:
-					f.write( f"Error calling variableRateSlope1 at {block_num} for asset {symbol}\n" )
-				continue
+				#Calling stableRateSlope2 function from interest_rate_strategy_contract
+				try:
+					stableRateSlope2 = interest_rate_strategy_contract.functions.stableRateSlope2().call(block_identifier=block_num)
+				except Exception as e:
+					with open( errorfile, "a" ) as f:
+						f.write( f"Error calling stableRateSlope2 at {block_num} for asset {symbol}\n" )
+					continue
+				
+				#Calling variableRateSlope1 function from interest_rate_strategy_contract
+				try:
+					variableRateSlope1 = interest_rate_strategy_contract.functions.variableRateSlope1().call(block_identifier=block_num)
+				except Exception as e:
+					with open( errorfile, "a" ) as f:
+						f.write( f"Error calling variableRateSlope1 at {block_num} for asset {symbol}\n" )
+					continue
 
-			#Calling variableRateSlope2 function from interest_rate_strategy_contract
-			try:
-				variableRateSlope2 = interest_rate_strategy_contract.functions.variableRateSlope2().call(block_identifier=block_num)
-			except Exception as e:
-				with open( errorfile, "a" ) as f:
-					f.write( f"Error calling variableRateSlope2 at {block_num} for asset {symbol}\n" )
-				continue
+				#Calling variableRateSlope2 function from interest_rate_strategy_contract
+				try:
+					variableRateSlope2 = interest_rate_strategy_contract.functions.variableRateSlope2().call(block_identifier=block_num)
+				except Exception as e:
+					with open( errorfile, "a" ) as f:
+						f.write( f"Error calling variableRateSlope2 at {block_num} for asset {symbol}\n" )
+					continue
 
-            # Compile the data into a row and append to the rows list
-			row = { 'block': block_num,
-					'timestamp': block.timestamp,
-					'symbol': symbol,
-					'address': address,
-					'excessUtilizationRate': excessUtilizationRate,
-					'optimalUtilizationRate': optimalUtilizationRate, 
-					'addressesProvider': addressesProvider,
-					'baseVariableBorrowRate': baseVariableBorrowRate, 
-					'maxVariableBorrowRate': maxVariableBorrowRate,
-					'stableRateSlope1': stableRateSlope1, 
-					'stableRateSlope2': stableRateSlope2,
-					'variableRateSlope1': variableRateSlope1, 
-					'variableRateSlope2': variableRateSlope2 }
-			rows.append(row)
-			bar.update(i)
+				# Compile the data into a row and append to the rows list
+				row = { 'block': block_num,
+						'timestamp': block.timestamp,
+						'symbol': symbol,
+						'address': address,
+						'interestRateStrategyAddress': interest_rate_strategy_address,
+						'excessUtilizationRate': excessUtilizationRate,
+						'optimalUtilizationRate': optimalUtilizationRate, 
+						'addressesProvider': addressesProvider,
+						'baseVariableBorrowRate': baseVariableBorrowRate, 
+						'maxVariableBorrowRate': maxVariableBorrowRate,
+						'stableRateSlope1': stableRateSlope1, 
+						'stableRateSlope2': stableRateSlope2,
+						'variableRateSlope1': variableRateSlope1, 
+						'variableRateSlope2': variableRateSlope2 }
+				rows.append(row)
+				bar.update(i)
+			else:
+				with open( errorfile, "a" ) as f:
+					f.write( f"Interest Rate Strategy Abi not found for asset {symbol} at block number {block_num}" )
+				continue
 
 # Convert the rows list to a Pandas DataFrame and save to CSV
 df = pd.DataFrame(rows)
