@@ -24,7 +24,7 @@ def fetch_abi(contract_address,retry=0):
 	This does *not* follow proxies
 	"""
 
-	max_retries = 1
+	max_retries = 2
 	try:
 		response = requests.get( f"{ABI_ENDPOINT}{contract_address}", timeout = 20 )	
 	except requests.exceptions.ReadTimeout as e:
@@ -50,6 +50,7 @@ def fetch_abi(contract_address,retry=0):
 		print( e )
 		if retry < max_retries:
 			print( f"JSON error, trying again" )
+			time.sleep(10)
 			return fetch_abi(contract_address,retry+1)
 		else:
 			print( f"Retried {retry} times" )

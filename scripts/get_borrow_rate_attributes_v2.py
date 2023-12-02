@@ -51,12 +51,17 @@ with progressbar.ProgressBar(max_value=len(blocks)) as bar:
 			#Getting Interest Rate Strategy Contract using the getReserveData function of the Lending Pool Contract
 			try:
 				interest_rate_strategy_address = Web3.to_checksum_address(aave_lending_pool_contract.functions.getReserveData(address).call(block_identifier=block_num)[-2])
-				interest_rate_strategy_address = get_proxy_address( web3, interest_rate_strategy_address )
+			except Exception as e:
+				with open( errorfile, "a" ) as f:
+					f.write( f"Error calling getReserveData at {block_num} for asset {symbol} on contract {lending_pool_contract.address}\n" )
+				continue
+			try:
+				#interest_rate_strategy_address = get_proxy_address( web3, interest_rate_strategy_address )
 				interest_rate_strategy_abi = get_cached_abi(interest_rate_strategy_address)
 				interest_rate_strategy_contract = web3.eth.contract( address=interest_rate_strategy_address, abi=interest_rate_strategy_abi )
 			except Exception as e:
 				with open( errorfile, "a" ) as f:
-					f.write( f"Error calling getReserveData at {block_num} for asset {symbol}\n" )
+					f.write( f"Error creating interest_rate_strategy_contract {interest_rate_strategy_address}" )
 				continue
 
 			#Calling EXCESS_UTILIZATION_RATE function from interest_rate_strategy_contract
@@ -64,7 +69,7 @@ with progressbar.ProgressBar(max_value=len(blocks)) as bar:
 				excessUtilizationRate = interest_rate_strategy_contract.functions.EXCESS_UTILIZATION_RATE().call(block_identifier=block_num)
 			except Exception as e:
 				with open( errorfile, "a" ) as f:
-					f.write( f"Error calling EXCESS_UTILIZATION_RATE at {block_num} for asset {symbol}\n" )
+					f.write( f"Error calling EXCESS_UTILIZATION_RATE at {block_num} for asset {symbol} on contract {interest_rate_strategy_contract.address}\n" )
 				continue
 
 			#Calling OPTIMAL_UTILIZATION_RATE function from interest_rate_strategy_contract
@@ -72,7 +77,7 @@ with progressbar.ProgressBar(max_value=len(blocks)) as bar:
 				optimalUtilizationRate = interest_rate_strategy_contract.functions.OPTIMAL_UTILIZATION_RATE().call(block_identifier=block_num)
 			except Exception as e:
 				with open( errorfile, "a" ) as f:
-					f.write( f"Error calling OPTIMAL_UTILIZATION_RATE at {block_num} for asset {symbol}\n" )
+					f.write( f"Error calling OPTIMAL_UTILIZATION_RATE at {block_num} for asset {symbol} on contract {interest_rate_strategy_contract.address}\n" )
 				continue
 
 			#Calling addressesProvider function from interest_rate_strategy_contract
@@ -80,7 +85,7 @@ with progressbar.ProgressBar(max_value=len(blocks)) as bar:
 				addressesProvider = interest_rate_strategy_contract.functions.addressesProvider().call(block_identifier=block_num)
 			except Exception as e:
 				with open( errorfile, "a" ) as f:
-					f.write( f"Error calling addressesProvider at {block_num} for asset {symbol}\n" )
+					f.write( f"Error calling addressesProvider at {block_num} for asset {symbol} on contract {interest_rate_strategy_contract.address}\n" )
 				continue
 
 			#Calling baseVariableBorrowRate function from interest_rate_strategy_contract
@@ -88,7 +93,7 @@ with progressbar.ProgressBar(max_value=len(blocks)) as bar:
 				baseVariableBorrowRate = interest_rate_strategy_contract.functions.baseVariableBorrowRate().call(block_identifier=block_num)
 			except Exception as e:
 				with open( errorfile, "a" ) as f:
-					f.write( f"Error calling baseVariableBorrowRate at {block_num} for asset {symbol}\n" )
+					f.write( f"Error calling baseVariableBorrowRate at {block_num} for asset {symbol} on contract {interest_rate_strategy_contract.address}\n" )
 				continue
 
 			#Calling getMaxVariableBorrowRate function from interest_rate_strategy_contract
