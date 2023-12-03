@@ -4,6 +4,8 @@ from web3 import Web3
 from web3.providers.rpc import HTTPProvider
 from utils import get_cached_abi, get_proxy_address
 import progressbar
+import json
+import sys
 
 # Connect to Ethereum node
 api_url = "http://localhost:8545"
@@ -17,7 +19,8 @@ aave_protocol_data_provider_contract = web3.eth.contract( address=aave_protocol_
 
 #Get Aave V2 lending pool contract
 aave_lending_pool_address = Web3.to_checksum_address("0x7d2768dE32b0b80b7a3454c06BdAc94A69DDc7A9")
-aave_lending_pool_abi = get_cached_abi(aave_lending_pool_address)
+aave_lending_pool_abi = get_proxy_address(web3, aave_lending_pool_address) #The lending pool contract is a proxy, we want the ABI of the lending pool, not of the proxy
+#aave_lending_pool_abi = get_cached_abi(lending_pool_proxy_address)
 aave_lending_pool_contract = web3.eth.contract( address=aave_lending_pool_address, abi=aave_lending_pool_abi)
 
 # Calling getAllReservesTokens function from Protocol Data Provider Contract => https://docs.aave.com/developers/v/2.0/the-core-protocol/protocol-data-provider#getallreservestokens
@@ -27,7 +30,10 @@ reserve_tokens = aave_protocol_data_provider_contract.functions.getAllReservesTo
 
 #Define output and error file paths
 outfile = "../data/borrow_rate_attributes_v2.csv"
-errorfile = "../data/aave_borrow_rate_attributes_errors.csv"
+errorfile = "../data/aave_borrow_rate_attributes_errors_v2.csv"
+
+with open( "abis/aave_v2_interest_rate_strategy.abi", "r" ) as f:
+	interest_rate_strategy_abi = json.load(f)
 
 #Define starting and ending block heights
 latest_block = web3.eth.block_number
@@ -56,8 +62,7 @@ with progressbar.ProgressBar(max_value=len(blocks)) as bar:
 					f.write( f"Error calling getReserveData at {block_num} for asset {symbol} on contract {lending_pool_contract.address}\n" )
 				continue
 			try:
-				#interest_rate_strategy_address = get_proxy_address( web3, interest_rate_strategy_address )
-				interest_rate_strategy_abi = get_cached_abi(interest_rate_strategy_address)
+				#interest_rate_strategy_abi = get_cached_abi(interest_rate_strategy_address) #This works, but it takes too long, since querying Etherscan is slow
 				interest_rate_strategy_contract = web3.eth.contract( address=interest_rate_strategy_address, abi=interest_rate_strategy_abi )
 			except Exception as e:
 				with open( errorfile, "a" ) as f:
