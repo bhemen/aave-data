@@ -186,7 +186,7 @@ def get_proxy_address(web3,address,override=False):
 					contract = web3.eth.contract(address=addr,abi=beacon_abi)
 					impl = contract.functions.implementation().call()
 					if impl is not None and int(impl,16) != 0:
-						addr = web3.toChecksumAddress(impl)
+						addr = web3.to_checksum_address(impl)
 				except Exception as e:
 					print( f"Error getting beacon implementation" )
 					print( f"{addr}" )

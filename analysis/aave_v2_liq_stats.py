@@ -2,23 +2,23 @@ import pandas as pd
 from web3 import Web3
 import sys
 sys.path.append("../scripts/")
-from utils import get_cached_abi
+from scripts.utils import get_cached_abi
 from web3.providers.rpc import HTTPProvider
 from tqdm import tqdm
 import numpy as np
 
 #Connect to an Ethereum Node
-api_url = "https://mainnet.infura.io/v3/43480ee1e64147de963916215adaa3a8"
+api_url = "" # your node url here
 provider = HTTPProvider(api_url)
 web3 = Web3(provider)
 
 #Get Aave V2 protocol data provider contract
-aave_protocol_data_provider_address = Web3.toChecksumAddress("0x057835Ad21a177dbdd3090bB1CAE03EaCF78Fc6d")
+aave_protocol_data_provider_address = Web3.to_checksum_address("0x057835Ad21a177dbdd3090bB1CAE03EaCF78Fc6d")
 aave_protocol_data_provider_abi = get_cached_abi( aave_protocol_data_provider_address )
 aave_protocol_data_provider_contract = web3.eth.contract( address=aave_protocol_data_provider_address, abi=aave_protocol_data_provider_abi )
 
 #Get Aave V2 lending pool contract
-aave_lending_pool_address = Web3.toChecksumAddress("0x7d2768dE32b0b80b7a3454c06BdAc94A69DDc7A9")
+aave_lending_pool_address = Web3.to_checksum_address("0x7d2768dE32b0b80b7a3454c06BdAc94A69DDc7A9")
 aave_lending_pool_abi = get_cached_abi(aave_lending_pool_address)
 aave_lending_pool_contract = web3.eth.contract( address=aave_lending_pool_address, abi=aave_lending_pool_abi)
 
