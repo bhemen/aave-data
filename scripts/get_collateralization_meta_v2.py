@@ -35,7 +35,7 @@ latest_block = web3.eth.block_number
 start_block = 11362589
 
 # Looking at every 100th block starting from the current block down to the start block
-blocks = list(range(latest_block, start_block-1, -1))
+blocks = list(range(latest_block, start_block-1, -100))
 
 # Create an empty list to store data rows
 rows = []
