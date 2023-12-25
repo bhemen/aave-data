@@ -8,7 +8,7 @@ from tqdm import tqdm
 import numpy as np
 
 #Connect to an Ethereum Node
-api_url = "https://mainnet.infura.io/v3/a9c92319ea074f0d8956abacdc16e4c8" # your node url here
+api_url = "" # your node url here
 provider = HTTPProvider(api_url)
 web3 = Web3(provider)
 
