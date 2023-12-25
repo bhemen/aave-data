@@ -2,13 +2,13 @@ import pandas as pd
 from web3 import Web3
 import sys
 sys.path.append("../scripts/")
-from scripts.utils import get_cached_abi
+from utils import get_proxy_address, get_cached_abi
 from web3.providers.rpc import HTTPProvider
 from tqdm import tqdm
 import numpy as np
 
 #Connect to an Ethereum Node
-api_url = "" # your node url here
+api_url = "https://mainnet.infura.io/v3/a9c92319ea074f0d8956abacdc16e4c8" # your node url here
 provider = HTTPProvider(api_url)
 web3 = Web3(provider)
 
@@ -19,27 +19,20 @@ aave_protocol_data_provider_contract = web3.eth.contract( address=aave_protocol_
 
 #Get Aave V2 lending pool contract
 aave_lending_pool_address = Web3.to_checksum_address("0x7d2768dE32b0b80b7a3454c06BdAc94A69DDc7A9")
-aave_lending_pool_abi = get_cached_abi(aave_lending_pool_address)
+aave_lending_pool_abi = get_proxy_address(web3, aave_lending_pool_address) #The lending pool contract is a proxy, we want the ABI of the lending pool, not of the proxy
 aave_lending_pool_contract = web3.eth.contract( address=aave_lending_pool_address, abi=aave_lending_pool_abi)
 
 # Reading liquidation event data from lending pool logs
-lendingpool_df = pd.read_csv("../data/lending_pool_logs.csv")
+lendingpool_df = pd.read_csv("../data/lending_pool_logs_v2.csv", low_memory=False)
 lendingpool_df = lendingpool_df[( lendingpool_df['event'] == 'LiquidationCall' ) ]
 lendingpool_df.reset_index(drop=True, inplace=True)
 
 #Reading necessary filess
-df = pd.read_csv("../data/aave_collateralization.csv" )
-meta_df = pd.read_csv("../data/aave_collateralization_meta.csv" )
 eth_df = pd.read_csv("../data/usd_prices/WETH_usd.csv")
+atokens_df = pd.read_csv("../data/aave_atokens_v2.csv")
 
-# Setting up a dictionary to map each token's address to its decimal places
-decimals = { r['address']: r['decimals'] for i, r in meta_df.iterrows() }
-decimals['UST'] = 6
-decimals['LUSD'] = 18
-decimals['stETH'] = 18
-decimals['ENS'] = 18
-decimals['CVX'] = 18
-decimals['1INCH'] = 18
+#Getting decimals for each token
+decimals = { r['symbol']: r['decimals'] for _, r in atokens_df.iterrows() }
 
 """
 Get the closest ETH price to a given timestamp.
@@ -51,9 +44,7 @@ Returns:
     float: The closest ETH price to the given timestamp.
 """
 def get_ETH_prices(timestamp):
-    differences = abs(eth_df['timestamp'] - timestamp)
-    min_diff_index = differences.idxmin()
-    closest_value = eth_df.loc[min_diff_index, 'USD_price']
+    closest_value = eth_df.iloc[(eth_df['timestamp'] - timestamp).abs().idxmin()]['USD_price']
     return closest_value
 
 # Variables to store the total liquidation loss in ETH and USD
@@ -100,8 +91,8 @@ for i in tqdm(range(len(lendingpool_df))):
             # print(f"{user} has a collateral of {collateral} ETH and a debt of {debt} ETH")
 
     except Exception as e:
-        with open( "../data/aave_liquidation_errors.csv", "a" ) as f:
-            f.write( f"Error calling getUserAccountData at {block_num} for user {user}" )
+        with open( "../data/aave_liquidation_errors_v2.csv", "a" ) as f:
+            f.write( f"Error calling getUserAccountData at {block_num} for user {user}\n" )
         continue
 
 print(f"Aave has lost {liquidation_loss_eth} ETH in liquidations equivalent to {liquidation_loss} USD")
