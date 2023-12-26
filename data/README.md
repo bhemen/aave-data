@@ -51,6 +51,31 @@ The file `borrow_rate_attributes_v2.csv` contains the different borrow rate sett
 * `variableRateSlope1` - Slope of the variable interest curve when utilization rate > 0 and <= optimalUtilizationRate
 * `variableRateSlope2` - Slope of the variable interest curve when utilization rate > optimalUtilizationRate
 
+## Aave v2 Liquidation Loss
+
+The file [aave_liquidation_loss_v2.csv](https://upenn.box.com/s/j21staqnqq15rrhkby7qojlyvg34i171) contains information about users who have experienced a significant reduction in their collateral value, approaching or reaching zero, while still maintaining a nonzero amount of debt. This dataset specifically highlights instances where Aave incurred financial losses during the liquidation process. This file was derived using the script `aave_v2_liq_stats.py`.
+
+* `borrower` - Address of the borrower
+* `liquidator` - Address of the last liquidator 
+* `debtLeft (in ETH)` - Amount of debt left in ETH
+* `debtLeft (in USD)` - Amount of debt left in USD
+* `debtAsset` - The debt asset that the borrower holds
+* `collateral_Asset` - Last liquidated collateral asset
+
+## Aave v2 User Interests
+
+The [aave_v2_user_interests](https://upenn.box.com/s/sj6y194ab14yopx2k5npfh7rxvftuf3u) folder contains CSV files for all assets where each row corresponds to a user and the interest they gained from depositing a specific asset. 
+
+* `user` - User address
+* `actual_interest` - Total interest gained throughout the deposited duration
+* `amount_deposited` - Total amount of that asset deposited
+* `amount_withdrawn` - Total amount of that asset withdrawn
+* `deposit_count` - Number of deposits made
+* `withdraw_count` - Number of withdrawals made
+* `interestAccrualPeriod` - Number of blocks the asset remained deposited and thus gained interest
+* `initialInterestBlockProduct` - This column represents the cumulative product of the initial interest amount at the beginning of a specified number of blocks and the duration (in blocks) for which the asset remained deposited without any intervening events. It essentially quantifies the initial interest, factoring in the time period over which the asset was continuously invested in the system.
+* `normalizedInterest` - Sum of `actual_interest` / Sum of `initialInterestBlockProduct`. This normalized metric accounts for both the duration (in number of blocks deposited) and the initial interest rate at the start of the block period, offering a comparative analysis of actual interest earned against initial expectations.
+
 
 ## Aave v2 user-level data
 
