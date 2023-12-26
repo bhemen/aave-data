@@ -23,7 +23,7 @@ has the output of repeated calls to the Aave Protocol Data Provider Contract (th
 * `lastUpdateTimestamp` - The timestamp of the reserve's last update.
 
 ## Aave v2 Reserve Configuration Data
-The file aave_collateralization_meta_v2.csv contains collateralization parameters for various assets.
+The file [aave_collateralization_meta_v2.csv](https://upenn.box.com/s/rnuz37qc03en2grs6h4xu58n880azu1u) contains collateralization parameters for various assets.
 
 Here is a description of the columns inside this file:
 * `ltv` - The maximum borrowing power of a specific collateral. If a collateral has a Loan to Value of 75%, for every 1 ETH worth of collateral the user will be able to borrow 0.75 ETH worth of principal currency. Specified per collateral.
