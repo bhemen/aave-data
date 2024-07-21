@@ -1,0 +1,692 @@
+____________________________________________________________________________
+USDT: [(1606775755, 11362887, 10500), (1606824924, 11366594, 0)]
+********************************************************
+Liquidation Bonus: 10500
+Count of times USDT was available but not chosen: 0
+Total times USDT was available: 0
+Percentage of times USDT was available but not chosen: 0%
+********************************************************
+Liquidation Bonus: 0
+Count of times USDT was available but not chosen: 641
+Total times USDT was available: 641
+Percentage of times USDT was available but not chosen: 100.0%
+Percentage of times USDT was available and was chosen: 0.0%
+____________________________________________________________________________
+WBTC: [(1606775755, 11362887, 11000), (1630779405, 13160803, 10900), (1632517524, 13290779, 10750), (1634996827, 13474128, 10650), (1661706482, 15429050, 10500)]
+********************************************************
+Liquidation Bonus: 11000
+Count of times WBTC was available but not chosen: 1030
+Total times WBTC was available: 1741
+Percentage of times WBTC was available but not chosen: 59.16%
+Percentage of times WBTC was available and was chosen: 40.84%
+********************************************************
+Liquidation Bonus: 10900
+Count of times WBTC was available but not chosen: 63
+Total times WBTC was available: 90
+Percentage of times WBTC was available but not chosen: 70.0%
+Percentage of times WBTC was available and was chosen: 30.0%
+********************************************************
+Liquidation Bonus: 10750
+Count of times WBTC was available but not chosen: 8
+Total times WBTC was available: 11
+Percentage of times WBTC was available but not chosen: 72.73%
+Percentage of times WBTC was available and was chosen: 27.27%
+********************************************************
+Liquidation Bonus: 10650
+Count of times WBTC was available but not chosen: 2529
+Total times WBTC was available: 4095
+Percentage of times WBTC was available but not chosen: 61.76%
+Percentage of times WBTC was available and was chosen: 38.24%
+********************************************************
+Liquidation Bonus: 10500
+Count of times WBTC was available but not chosen: 449
+Total times WBTC was available: 665
+Percentage of times WBTC was available but not chosen: 67.52%
+Percentage of times WBTC was available and was chosen: 32.48%
+____________________________________________________________________________
+WETH: [(1606775755, 11362887, 10500)]
+********************************************************
+Liquidation Bonus: 10500
+Count of times WETH was available but not chosen: 5006
+Total times WETH was available: 20320
+Percentage of times WETH was available but not chosen: 24.64%
+Percentage of times WETH was available and was chosen: 75.36%
+____________________________________________________________________________
+YFI: [(1606775755, 11362887, 11500), (1630779405, 13160803, 11250), (1632517524, 13290779, 11000), (1633739007, 13381378, 10800), (1634996827, 13474128, 10750), (1689672023, 17719186, 11000)]
+********************************************************
+Liquidation Bonus: 11500
+Count of times YFI was available but not chosen: 404
+Total times YFI was available: 522
+Percentage of times YFI was available but not chosen: 77.39%
+Percentage of times YFI was available and was chosen: 22.61%
+********************************************************
+Liquidation Bonus: 11250
+Count of times YFI was available but not chosen: 16
+Total times YFI was available: 19
+Percentage of times YFI was available but not chosen: 84.21%
+Percentage of times YFI was available and was chosen: 15.79%
+********************************************************
+Liquidation Bonus: 11000
+Count of times YFI was available but not chosen: 0
+Total times YFI was available: 0
+Percentage of times YFI was available but not chosen: 0%
+********************************************************
+Liquidation Bonus: 10800
+Count of times YFI was available but not chosen: 0
+Total times YFI was available: 0
+Percentage of times YFI was available but not chosen: 0%
+********************************************************
+Liquidation Bonus: 10750
+Count of times YFI was available but not chosen: 833
+Total times YFI was available: 966
+Percentage of times YFI was available but not chosen: 86.23%
+Percentage of times YFI was available and was chosen: 13.77%
+********************************************************
+Liquidation Bonus: 11000
+Count of times YFI was available but not chosen: 38
+Total times YFI was available: 64
+Percentage of times YFI was available but not chosen: 59.38%
+Percentage of times YFI was available and was chosen: 40.62%
+____________________________________________________________________________
+ZRX: [(1606775755, 11362887, 11000), (1630779405, 13160803, 10800), (1632517524, 13290779, 10750), (1689672023, 17719186, 11000)]
+********************************************************
+Liquidation Bonus: 11000
+Count of times ZRX was available but not chosen: 333
+Total times ZRX was available: 366
+Percentage of times ZRX was available but not chosen: 90.98%
+Percentage of times ZRX was available and was chosen: 9.02%
+********************************************************
+Liquidation Bonus: 10800
+Count of times ZRX was available but not chosen: 23
+Total times ZRX was available: 23
+Percentage of times ZRX was available but not chosen: 100.0%
+Percentage of times ZRX was available and was chosen: 0.0%
+********************************************************
+Liquidation Bonus: 10750
+Count of times ZRX was available but not chosen: 458
+Total times ZRX was available: 543
+Percentage of times ZRX was available but not chosen: 84.35%
+Percentage of times ZRX was available and was chosen: 15.65%
+********************************************************
+Liquidation Bonus: 11000
+Count of times ZRX was available but not chosen: 39
+Total times ZRX was available: 44
+Percentage of times ZRX was available but not chosen: 88.64%
+Percentage of times ZRX was available and was chosen: 11.36%
+____________________________________________________________________________
+UNI: [(1606775755, 11362887, 11000), (1634349570, 13426219, 10800), (1645401105, 14246054, 10750), (1651429014, 14693506, 10900)]
+********************************************************
+Liquidation Bonus: 11000
+Count of times UNI was available but not chosen: 834
+Total times UNI was available: 1089
+Percentage of times UNI was available but not chosen: 76.58%
+Percentage of times UNI was available and was chosen: 23.42%
+********************************************************
+Liquidation Bonus: 10800
+Count of times UNI was available but not chosen: 365
+Total times UNI was available: 462
+Percentage of times UNI was available but not chosen: 79.0%
+Percentage of times UNI was available and was chosen: 21.0%
+********************************************************
+Liquidation Bonus: 10750
+Count of times UNI was available but not chosen: 95
+Total times UNI was available: 146
+Percentage of times UNI was available but not chosen: 65.07%
+Percentage of times UNI was available and was chosen: 34.93%
+********************************************************
+Liquidation Bonus: 10900
+Count of times UNI was available but not chosen: 1250
+Total times UNI was available: 1602
+Percentage of times UNI was available but not chosen: 78.03%
+Percentage of times UNI was available and was chosen: 21.97%
+____________________________________________________________________________
+AAVE: [(1606775755, 11362887, 11000), (1630779405, 13160803, 10800), (1632517524, 13290779, 10750)]
+********************************************************
+Liquidation Bonus: 11000
+Count of times AAVE was available but not chosen: 938
+Total times AAVE was available: 1291
+Percentage of times AAVE was available but not chosen: 72.66%
+Percentage of times AAVE was available and was chosen: 27.34%
+********************************************************
+Liquidation Bonus: 10800
+Count of times AAVE was available but not chosen: 58
+Total times AAVE was available: 63
+Percentage of times AAVE was available but not chosen: 92.06%
+Percentage of times AAVE was available and was chosen: 7.94%
+********************************************************
+Liquidation Bonus: 10750
+Count of times AAVE was available but not chosen: 1845
+Total times AAVE was available: 2408
+Percentage of times AAVE was available but not chosen: 76.62%
+Percentage of times AAVE was available and was chosen: 23.38%
+____________________________________________________________________________
+BAT: [(1606775755, 11362887, 11000), (1630779405, 13160803, 10900), (1632517524, 13290779, 10750), (1689672023, 17719186, 11000)]
+********************************************************
+Liquidation Bonus: 11000
+Count of times BAT was available but not chosen: 410
+Total times BAT was available: 449
+Percentage of times BAT was available but not chosen: 91.31%
+Percentage of times BAT was available and was chosen: 8.69%
+********************************************************
+Liquidation Bonus: 10900
+Count of times BAT was available but not chosen: 41
+Total times BAT was available: 41
+Percentage of times BAT was available but not chosen: 100.0%
+Percentage of times BAT was available and was chosen: 0.0%
+********************************************************
+Liquidation Bonus: 10750
+Count of times BAT was available but not chosen: 666
+Total times BAT was available: 769
+Percentage of times BAT was available but not chosen: 86.61%
+Percentage of times BAT was available and was chosen: 13.39%
+********************************************************
+Liquidation Bonus: 11000
+Count of times BAT was available but not chosen: 42
+Total times BAT was available: 51
+Percentage of times BAT was available but not chosen: 82.35%
+Percentage of times BAT was available and was chosen: 17.65%
+____________________________________________________________________________
+BUSD: [(1606775755, 11362887, 0)]
+********************************************************
+Liquidation Bonus: 0
+Count of times BUSD was available but not chosen: 83
+Total times BUSD was available: 83
+Percentage of times BUSD was available but not chosen: 100.0%
+Percentage of times BUSD was available and was chosen: 0.0%
+____________________________________________________________________________
+DAI: [(1606775755, 11362887, 10500), (1660464654, 15338584, 10400)]
+********************************************************
+Liquidation Bonus: 10500
+Count of times DAI was available but not chosen: 1083
+Total times DAI was available: 1248
+Percentage of times DAI was available but not chosen: 86.78%
+Percentage of times DAI was available and was chosen: 13.22%
+********************************************************
+Liquidation Bonus: 10400
+Count of times DAI was available but not chosen: 322
+Total times DAI was available: 438
+Percentage of times DAI was available but not chosen: 73.52%
+Percentage of times DAI was available and was chosen: 26.48%
+____________________________________________________________________________
+ENJ: [(1606775755, 11362887, 11000), (1640474091, 13877253, 10750), (1642910003, 14059558, 10650), (1643582776, 14109970, 10750), (1648416138, 14470645, 10650), (1660464654, 15338584, 10600), (1689672023, 17719186, 11000)]
+********************************************************
+Liquidation Bonus: 11000
+Count of times ENJ was available but not chosen: 571
+Total times ENJ was available: 713
+Percentage of times ENJ was available but not chosen: 80.08%
+Percentage of times ENJ was available and was chosen: 19.92%
+********************************************************
+Liquidation Bonus: 10750
+Count of times ENJ was available but not chosen: 118
+Total times ENJ was available: 137
+Percentage of times ENJ was available but not chosen: 86.13%
+Percentage of times ENJ was available and was chosen: 13.87%
+********************************************************
+Liquidation Bonus: 10650
+Count of times ENJ was available but not chosen: 25
+Total times ENJ was available: 38
+Percentage of times ENJ was available but not chosen: 65.79%
+Percentage of times ENJ was available and was chosen: 34.21%
+********************************************************
+Liquidation Bonus: 10750
+Count of times ENJ was available but not chosen: 90
+Total times ENJ was available: 106
+Percentage of times ENJ was available but not chosen: 84.91%
+Percentage of times ENJ was available and was chosen: 15.09%
+********************************************************
+Liquidation Bonus: 10650
+Count of times ENJ was available but not chosen: 501
+Total times ENJ was available: 618
+Percentage of times ENJ was available but not chosen: 81.07%
+Percentage of times ENJ was available and was chosen: 18.93%
+********************************************************
+Liquidation Bonus: 10600
+Count of times ENJ was available but not chosen: 108
+Total times ENJ was available: 153
+Percentage of times ENJ was available but not chosen: 70.59%
+Percentage of times ENJ was available and was chosen: 29.41%
+********************************************************
+Liquidation Bonus: 11000
+Count of times ENJ was available but not chosen: 27
+Total times ENJ was available: 86
+Percentage of times ENJ was available but not chosen: 31.4%
+Percentage of times ENJ was available and was chosen: 68.6%
+____________________________________________________________________________
+KNC: [(1606775755, 11362887, 11000)]
+********************************************************
+Liquidation Bonus: 11000
+Count of times KNC was available but not chosen: 760
+Total times KNC was available: 880
+Percentage of times KNC was available but not chosen: 86.36%
+Percentage of times KNC was available and was chosen: 13.64%
+____________________________________________________________________________
+LINK: [(1606775755, 11362887, 11000), (1634349570, 13426219, 10750), (1645401105, 14246054, 10650), (1649551760, 14554832, 10630), (1660464654, 15338584, 10700)]
+********************************************************
+Liquidation Bonus: 11000
+Count of times LINK was available but not chosen: 1252
+Total times LINK was available: 2733
+Percentage of times LINK was available but not chosen: 45.81%
+Percentage of times LINK was available and was chosen: 54.19%
+********************************************************
+Liquidation Bonus: 10750
+Count of times LINK was available but not chosen: 626
+Total times LINK was available: 1110
+Percentage of times LINK was available but not chosen: 56.4%
+Percentage of times LINK was available and was chosen: 43.6%
+********************************************************
+Liquidation Bonus: 10650
+Count of times LINK was available but not chosen: 156
+Total times LINK was available: 363
+Percentage of times LINK was available but not chosen: 42.98%
+Percentage of times LINK was available and was chosen: 57.02%
+********************************************************
+Liquidation Bonus: 10630
+Count of times LINK was available but not chosen: 1756
+Total times LINK was available: 3214
+Percentage of times LINK was available but not chosen: 54.64%
+Percentage of times LINK was available and was chosen: 45.36%
+********************************************************
+Liquidation Bonus: 10700
+Count of times LINK was available but not chosen: 467
+Total times LINK was available: 920
+Percentage of times LINK was available but not chosen: 50.76%
+Percentage of times LINK was available and was chosen: 49.24%
+____________________________________________________________________________
+MANA: [(1606775755, 11362887, 11000), (1630779405, 13160803, 10800), (1632517524, 13290779, 10750), (1689672023, 17719186, 11000)]
+********************************************************
+Liquidation Bonus: 11000
+Count of times MANA was available but not chosen: 355
+Total times MANA was available: 441
+Percentage of times MANA was available but not chosen: 80.5%
+Percentage of times MANA was available and was chosen: 19.5%
+********************************************************
+Liquidation Bonus: 10800
+Count of times MANA was available but not chosen: 38
+Total times MANA was available: 39
+Percentage of times MANA was available but not chosen: 97.44%
+Percentage of times MANA was available and was chosen: 2.56%
+********************************************************
+Liquidation Bonus: 10750
+Count of times MANA was available but not chosen: 968
+Total times MANA was available: 1300
+Percentage of times MANA was available but not chosen: 74.46%
+Percentage of times MANA was available and was chosen: 25.54%
+********************************************************
+Liquidation Bonus: 11000
+Count of times MANA was available but not chosen: 59
+Total times MANA was available: 97
+Percentage of times MANA was available but not chosen: 60.82%
+Percentage of times MANA was available and was chosen: 39.18%
+____________________________________________________________________________
+MKR: [(1606775755, 11362887, 11000), (1632517524, 13290779, 10800), (1645401105, 14246054, 10750)]
+********************************************************
+Liquidation Bonus: 11000
+Count of times MKR was available but not chosen: 437
+Total times MKR was available: 511
+Percentage of times MKR was available but not chosen: 85.52%
+Percentage of times MKR was available and was chosen: 14.48%
+********************************************************
+Liquidation Bonus: 10800
+Count of times MKR was available but not chosen: 246
+Total times MKR was available: 271
+Percentage of times MKR was available but not chosen: 90.77%
+Percentage of times MKR was available and was chosen: 9.23%
+********************************************************
+Liquidation Bonus: 10750
+Count of times MKR was available but not chosen: 678
+Total times MKR was available: 823
+Percentage of times MKR was available but not chosen: 82.38%
+Percentage of times MKR was available and was chosen: 17.62%
+____________________________________________________________________________
+REN: [(1606775755, 11362887, 11000), (1630779405, 13160803, 10900), (1632517524, 13290779, 10750), (1689672023, 17719186, 11000)]
+********************************************************
+Liquidation Bonus: 11000
+Count of times REN was available but not chosen: 550
+Total times REN was available: 672
+Percentage of times REN was available but not chosen: 81.85%
+Percentage of times REN was available and was chosen: 18.15%
+********************************************************
+Liquidation Bonus: 10900
+Count of times REN was available but not chosen: 23
+Total times REN was available: 32
+Percentage of times REN was available but not chosen: 71.88%
+Percentage of times REN was available and was chosen: 28.12%
+********************************************************
+Liquidation Bonus: 10750
+Count of times REN was available but not chosen: 848
+Total times REN was available: 1041
+Percentage of times REN was available but not chosen: 81.46%
+Percentage of times REN was available and was chosen: 18.54%
+********************************************************
+Liquidation Bonus: 11000
+Count of times REN was available but not chosen: 51
+Total times REN was available: 71
+Percentage of times REN was available but not chosen: 71.83%
+Percentage of times REN was available and was chosen: 28.17%
+____________________________________________________________________________
+SNX: [(1606775755, 11362887, 11000), (1630779405, 13160803, 10900), (1632517524, 13290779, 10750)]
+********************************************************
+Liquidation Bonus: 11000
+Count of times SNX was available but not chosen: 491
+Total times SNX was available: 527
+Percentage of times SNX was available but not chosen: 93.17%
+Percentage of times SNX was available and was chosen: 6.83%
+********************************************************
+Liquidation Bonus: 10900
+Count of times SNX was available but not chosen: 34
+Total times SNX was available: 34
+Percentage of times SNX was available but not chosen: 100.0%
+Percentage of times SNX was available and was chosen: 0.0%
+********************************************************
+Liquidation Bonus: 10750
+Count of times SNX was available but not chosen: 1051
+Total times SNX was available: 1172
+Percentage of times SNX was available but not chosen: 89.68%
+Percentage of times SNX was available and was chosen: 10.32%
+____________________________________________________________________________
+sUSD: [(1606775755, 11362887, 0)]
+********************************************************
+Liquidation Bonus: 0
+Count of times sUSD was available but not chosen: 90
+Total times sUSD was available: 90
+Percentage of times sUSD was available but not chosen: 100.0%
+Percentage of times sUSD was available and was chosen: 0.0%
+____________________________________________________________________________
+TUSD: [(1606775755, 11362887, 10500), (1691299943, 17853853, 11000)]
+********************************************************
+Liquidation Bonus: 10500
+Count of times TUSD was available but not chosen: 338
+Total times TUSD was available: 367
+Percentage of times TUSD was available but not chosen: 92.1%
+Percentage of times TUSD was available and was chosen: 7.9%
+********************************************************
+Liquidation Bonus: 11000
+Count of times TUSD was available but not chosen: 10
+Total times TUSD was available: 19
+Percentage of times TUSD was available but not chosen: 52.63%
+Percentage of times TUSD was available and was chosen: 47.37%
+____________________________________________________________________________
+USDC: [(1606775755, 11362887, 10500), (1633739007, 13381378, 10400), (1649551760, 14554832, 10450)]
+********************************************************
+Liquidation Bonus: 10500
+Count of times USDC was available but not chosen: 345
+Total times USDC was available: 497
+Percentage of times USDC was available but not chosen: 69.42%
+Percentage of times USDC was available and was chosen: 30.58%
+********************************************************
+Liquidation Bonus: 10400
+Count of times USDC was available but not chosen: 387
+Total times USDC was available: 445
+Percentage of times USDC was available but not chosen: 86.97%
+Percentage of times USDC was available and was chosen: 13.03%
+********************************************************
+Liquidation Bonus: 10450
+Count of times USDC was available but not chosen: 1000
+Total times USDC was available: 2301
+Percentage of times USDC was available but not chosen: 43.46%
+Percentage of times USDC was available and was chosen: 56.54%
+____________________________________________________________________________
+CRV: [(1606775755, 11362887, 0), (1609105615, 11538358, 11500), (1630779405, 13160803, 11250), (1632517524, 13290779, 11000), (1640474091, 13877253, 10850), (1661706482, 15429050, 10800)]
+********************************************************
+Liquidation Bonus: 0
+Count of times CRV was available but not chosen: 0
+Total times CRV was available: 0
+Percentage of times CRV was available but not chosen: 0%
+********************************************************
+Liquidation Bonus: 11500
+Count of times CRV was available but not chosen: 375
+Total times CRV was available: 452
+Percentage of times CRV was available but not chosen: 82.96%
+Percentage of times CRV was available and was chosen: 17.04%
+********************************************************
+Liquidation Bonus: 11250
+Count of times CRV was available but not chosen: 46
+Total times CRV was available: 49
+Percentage of times CRV was available but not chosen: 93.88%
+Percentage of times CRV was available and was chosen: 6.12%
+********************************************************
+Liquidation Bonus: 11000
+Count of times CRV was available but not chosen: 64
+Total times CRV was available: 86
+Percentage of times CRV was available but not chosen: 74.42%
+Percentage of times CRV was available and was chosen: 25.58%
+********************************************************
+Liquidation Bonus: 10850
+Count of times CRV was available but not chosen: 851
+Total times CRV was available: 1023
+Percentage of times CRV was available but not chosen: 83.19%
+Percentage of times CRV was available and was chosen: 16.81%
+********************************************************
+Liquidation Bonus: 10800
+Count of times CRV was available but not chosen: 211
+Total times CRV was available: 278
+Percentage of times CRV was available but not chosen: 75.9%
+Percentage of times CRV was available and was chosen: 24.1%
+____________________________________________________________________________
+GUSD: [(1606775755, 11362887, 0)]
+********************************************************
+Liquidation Bonus: 0
+Count of times GUSD was available but not chosen: 109
+Total times GUSD was available: 109
+Percentage of times GUSD was available but not chosen: 100.0%
+Percentage of times GUSD was available and was chosen: 0.0%
+____________________________________________________________________________
+BAL: [(1606775755, 11362887, 0), (1612305941, 11779563, 11000), (1634349570, 13426219, 10800)]
+********************************************************
+Liquidation Bonus: 0
+Count of times BAL was available but not chosen: 0
+Total times BAL was available: 0
+Percentage of times BAL was available but not chosen: 0%
+********************************************************
+Liquidation Bonus: 11000
+Count of times BAL was available but not chosen: 336
+Total times BAL was available: 361
+Percentage of times BAL was available but not chosen: 93.07%
+Percentage of times BAL was available and was chosen: 6.93%
+********************************************************
+Liquidation Bonus: 10800
+Count of times BAL was available but not chosen: 793
+Total times BAL was available: 878
+Percentage of times BAL was available but not chosen: 90.32%
+Percentage of times BAL was available and was chosen: 9.68%
+____________________________________________________________________________
+xSUSHI: [(1606775755, 11362887, 0), (1613338009, 11857246, 11500), (1630779405, 13160803, 11250), (1632517524, 13290779, 11000), (1640474091, 13877253, 10850), (1689672023, 17719186, 11000)]
+********************************************************
+Liquidation Bonus: 0
+Count of times xSUSHI was available but not chosen: 0
+Total times xSUSHI was available: 0
+Percentage of times xSUSHI was available but not chosen: 0%
+********************************************************
+Liquidation Bonus: 11500
+Count of times xSUSHI was available but not chosen: 338
+Total times xSUSHI was available: 425
+Percentage of times xSUSHI was available but not chosen: 79.53%
+Percentage of times xSUSHI was available and was chosen: 20.47%
+********************************************************
+Liquidation Bonus: 11250
+Count of times xSUSHI was available but not chosen: 40
+Total times xSUSHI was available: 46
+Percentage of times xSUSHI was available but not chosen: 86.96%
+Percentage of times xSUSHI was available and was chosen: 13.04%
+********************************************************
+Liquidation Bonus: 11000
+Count of times xSUSHI was available but not chosen: 42
+Total times xSUSHI was available: 69
+Percentage of times xSUSHI was available but not chosen: 60.87%
+Percentage of times xSUSHI was available and was chosen: 39.13%
+********************************************************
+Liquidation Bonus: 10850
+Count of times xSUSHI was available but not chosen: 727
+Total times xSUSHI was available: 890
+Percentage of times xSUSHI was available but not chosen: 81.69%
+Percentage of times xSUSHI was available and was chosen: 18.31%
+********************************************************
+Liquidation Bonus: 11000
+Count of times xSUSHI was available but not chosen: 17
+Total times xSUSHI was available: 32
+Percentage of times xSUSHI was available but not chosen: 53.12%
+Percentage of times xSUSHI was available and was chosen: 46.88%
+____________________________________________________________________________
+renFIL: [(1606775755, 11362887, 0)]
+********************************************************
+Liquidation Bonus: 0
+Count of times renFIL was available but not chosen: 16
+Total times renFIL was available: 16
+Percentage of times renFIL was available but not chosen: 100.0%
+Percentage of times renFIL was available and was chosen: 0.0%
+____________________________________________________________________________
+RAI: [(1606775755, 11362887, 0)]
+********************************************************
+Liquidation Bonus: 0
+Count of times RAI was available but not chosen: 7
+Total times RAI was available: 7
+Percentage of times RAI was available but not chosen: 100.0%
+Percentage of times RAI was available and was chosen: 0.0%
+____________________________________________________________________________
+AMPL: [(1606775755, 11362887, 0)]
+********************************************************
+Liquidation Bonus: 0
+Count of times AMPL was available but not chosen: 175
+Total times AMPL was available: 175
+Percentage of times AMPL was available but not chosen: 100.0%
+Percentage of times AMPL was available and was chosen: 0.0%
+____________________________________________________________________________
+USDP: [(1606775755, 11362887, 0)]
+********************************************************
+Liquidation Bonus: 0
+Count of times USDP was available but not chosen: 18
+Total times USDP was available: 18
+Percentage of times USDP was available but not chosen: 100.0%
+Percentage of times USDP was available and was chosen: 0.0%
+____________________________________________________________________________
+DPI: [(1606775755, 11362887, 0), (1629567760, 13070049, 11000), (1635591008, 13518027, 10850), (1648416138, 14470645, 10750), (1689672023, 17719186, 11000)]
+********************************************************
+Liquidation Bonus: 0
+Count of times DPI was available but not chosen: 0
+Total times DPI was available: 0
+Percentage of times DPI was available but not chosen: 0%
+********************************************************
+Liquidation Bonus: 11000
+Count of times DPI was available but not chosen: 14
+Total times DPI was available: 15
+Percentage of times DPI was available but not chosen: 93.33%
+Percentage of times DPI was available and was chosen: 6.67%
+********************************************************
+Liquidation Bonus: 10850
+Count of times DPI was available but not chosen: 68
+Total times DPI was available: 86
+Percentage of times DPI was available but not chosen: 79.07%
+Percentage of times DPI was available and was chosen: 20.93%
+********************************************************
+Liquidation Bonus: 10750
+Count of times DPI was available but not chosen: 158
+Total times DPI was available: 187
+Percentage of times DPI was available but not chosen: 84.49%
+Percentage of times DPI was available and was chosen: 15.51%
+********************************************************
+Liquidation Bonus: 11000
+Count of times DPI was available but not chosen: 3
+Total times DPI was available: 8
+Percentage of times DPI was available but not chosen: 37.5%
+Percentage of times DPI was available and was chosen: 62.5%
+____________________________________________________________________________
+FRAX: [(1606775755, 11362887, 0)]
+********************************************************
+Liquidation Bonus: 0
+Count of times FRAX was available but not chosen: 3
+Total times FRAX was available: 3
+Percentage of times FRAX was available but not chosen: 100.0%
+Percentage of times FRAX was available and was chosen: 0.0%
+____________________________________________________________________________
+FEI: [(1606775755, 11362887, 0), (1643582776, 14109970, 10650), (1690983431, 17827655, 11000)]
+********************************************************
+Liquidation Bonus: 0
+Count of times FEI was available but not chosen: 0
+Total times FEI was available: 0
+Percentage of times FEI was available but not chosen: 0%
+********************************************************
+Liquidation Bonus: 10650
+Count of times FEI was available but not chosen: 6
+Total times FEI was available: 10
+Percentage of times FEI was available but not chosen: 60.0%
+Percentage of times FEI was available and was chosen: 40.0%
+********************************************************
+Liquidation Bonus: 11000
+Count of times FEI was available but not chosen: 0
+Total times FEI was available: 7
+Percentage of times FEI was available but not chosen: 0.0%
+Percentage of times FEI was available and was chosen: 100.0%
+____________________________________________________________________________
+stETH: [(1606775755, 11362887, 0), (1645978932, 14289297, 10750), (1665910847, 15759644, 10700)]
+********************************************************
+Liquidation Bonus: 0
+Count of times stETH was available but not chosen: 0
+Total times stETH was available: 0
+Percentage of times stETH was available but not chosen: 0%
+********************************************************
+Liquidation Bonus: 10750
+Count of times stETH was available but not chosen: 153
+Total times stETH was available: 527
+Percentage of times stETH was available but not chosen: 29.03%
+Percentage of times stETH was available and was chosen: 70.97%
+********************************************************
+Liquidation Bonus: 10700
+Count of times stETH was available but not chosen: 78
+Total times stETH was available: 225
+Percentage of times stETH was available but not chosen: 34.67%
+Percentage of times stETH was available and was chosen: 65.33%
+____________________________________________________________________________
+ENS: [(1606775755, 11362887, 0), (1646632976, 14338029, 10800)]
+********************************************************
+Liquidation Bonus: 0
+Count of times ENS was available but not chosen: 0
+Total times ENS was available: 0
+Percentage of times ENS was available but not chosen: 0%
+********************************************************
+Liquidation Bonus: 10800
+Count of times ENS was available but not chosen: 145
+Total times ENS was available: 232
+Percentage of times ENS was available but not chosen: 62.5%
+Percentage of times ENS was available and was chosen: 37.5%
+____________________________________________________________________________
+UST: [(1606775755, 11362887, 0)]
+********************************************************
+Liquidation Bonus: 0
+Count of times UST was available but not chosen: 7
+Total times UST was available: 7
+Percentage of times UST was available but not chosen: 100.0%
+Percentage of times UST was available and was chosen: 0.0%
+____________________________________________________________________________
+CVX: [(1606775755, 11362887, 0), (1655130530, 14956476, 10850)]
+********************************************************
+Liquidation Bonus: 0
+Count of times CVX was available but not chosen: 0
+Total times CVX was available: 0
+Percentage of times CVX was available but not chosen: 0%
+********************************************************
+Liquidation Bonus: 10850
+Count of times CVX was available but not chosen: 24
+Total times CVX was available: 42
+Percentage of times CVX was available but not chosen: 57.14%
+Percentage of times CVX was available and was chosen: 42.86%
+____________________________________________________________________________
+1INCH: [(1606775755, 11362887, 0), (1659202233, 15245141, 10850)]
+********************************************************
+Liquidation Bonus: 0
+Count of times 1INCH was available but not chosen: 0
+Total times 1INCH was available: 0
+Percentage of times 1INCH was available but not chosen: 0%
+********************************************************
+Liquidation Bonus: 10850
+Count of times 1INCH was available but not chosen: 30
+Total times 1INCH was available: 42
+Percentage of times 1INCH was available but not chosen: 71.43%
+Percentage of times 1INCH was available and was chosen: 28.57%
+____________________________________________________________________________
+LUSD: [(1606775755, 11362887, 0)]
+********************************************************
+Liquidation Bonus: 0
+Count of times LUSD was available but not chosen: 13
+Total times LUSD was available: 13
+Percentage of times LUSD was available but not chosen: 100.0%
+Percentage of times LUSD was available and was chosen: 0.0%
