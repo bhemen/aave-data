@@ -11,10 +11,13 @@ import time
 
 ABI_ENDPOINT = 'https://api.etherscan.io/api?module=contract&action=getabi&address='
 
-if not os.path.exists('abis'):
-    os.makedirs('abis')
+#Path of current file
+dir_path = os.path.dirname(os.path.realpath(__file__))
 
-_cache_file = "abis/cached_abis.json"
+if not os.path.exists(f'{dir_path}/abis'):
+    os.makedirs(f'{dir_path}/abis')
+
+_cache_file = f"{dir_path}/abis/cached_abis.json"
 
 _cache = dict() #Dictionary of address: abi pairs
 
@@ -90,6 +93,7 @@ def get_cached_abi(contract_address,abikw=""):
 		with open(_cache_file) as f:
 			_cache = json.load(f)
 	except Exception as e:
+		print( f'Failed to load cache' )
 		_cache = dict()
 	
 	if abikw:
@@ -100,6 +104,7 @@ def get_cached_abi(contract_address,abikw=""):
 	abi = _cache.get(search_for)
 
 	if not abi:
+		print( f'{search_for} not found in cache ... fetching' )
 		abi = fetch_abi(search_for)
 		if abi is not None:
 			_cache[search_for] = abi
