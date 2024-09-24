@@ -4,8 +4,6 @@ from web3 import Web3
 import sys
 from tqdm import tqdm
 import numpy as np
-import time
-import os
 sys.path.append("../scripts/")
 from utils import get_proxy_address, get_cached_abi
 from web3.providers.rpc import HTTPProvider
@@ -27,24 +25,19 @@ liquidations_df = pd.read_csv("../data/aave_v2_LiquidationCall_with_total_collat
 liquidations_df.sort_values(by='block_timestamp_unix', inplace=True)
 liquidations_df.reset_index(drop=True, inplace=True)
 
+borrow_df = pd.read_csv("../data/aave_v2_Borrow.csv")
+borrow_df.sort_values(by='block_timestamp_unix', inplace=True)
+borrow_df.reset_index(drop=True, inplace=True)
+
 # Add new columns for health factor block and blocks until liquidation if not already present
-if 'health_factor_above_one_block' not in liquidations_df.columns:
-    liquidations_df['health_factor_above_one_block'] = np.nan
+if 'block_number_when_healthfactor_above_one' not in liquidations_df.columns:
+    liquidations_df['block_number_when_healthfactor_above_one'] = np.nan
 if 'blocks_for_liquidation' not in liquidations_df.columns:
     liquidations_df['blocks_for_liquidation'] = np.nan
 
-# Path to checkpoint and error files
-checkpoint_file = "../data/liquidations_health_factor_final.csv"
-errors_file = "../data/liquidations_health_factor_errors.csv"
-
-# Check if the checkpoint file already exists, and load progress if it does
-if os.path.exists(checkpoint_file):
-    processed_df = pd.read_csv(checkpoint_file)
-    start_idx = len(processed_df)  # Start from where we left off
-    header_needed = False  # Don't need header if resuming
-else:
-    start_idx = 0  # Start from the beginning
-    header_needed = True  # First time saving, so include headers
+# Path to output and error files
+output_file = "../data/liquidations_health_factor_details.csv"
+errors_file = "../data/liquidations_health_factor_errors_updated.csv"
 
 # Function to get user account data
 def get_health_factor(user, block_number):
@@ -54,47 +47,39 @@ def get_health_factor(user, block_number):
         return health_factor
     except Exception as e:
         with open(errors_file, "a") as f:
-            f.write(f"Error calling getUserAccountData for user {user} at block {block_number}: {e}\n")
+            f.write(f"Error calling getUserAccountData for user {user} at block {block_number}\n")
         return np.nan
 
-# Iterate over each row in the dataframe, starting from the last processed index
-for idx, row in tqdm(liquidations_df.iloc[start_idx:].iterrows(), total=liquidations_df.shape[0] - start_idx, initial=start_idx):
-    user = row['user']
-    block_number = int(row['blockNumber'])
+def get_first_borrow_block_number(user):
+    # Filter the DataFrame for the given user
+    user_df = borrow_df[borrow_df['onBehalfOf'] == user]
     
-    health_factor_after_one_block = None
+    # Check if user_df is not empty
+    if not user_df.empty:
+        # Get the first blockNumber from the sorted DataFrame
+        first_block_number = user_df['blockNumber'].iloc[0]
+        return first_block_number
+    else:
+        return None  # Return None if the user doesn't exist in the DataFrame
+
+# Iterate over each row in the dataframe
+for i in tqdm(range(len(liquidations_df))):
+    user = liquidations_df.user.iloc[i]
+    block_number = int(liquidations_df.blockNumber.iloc[i])
+    first_borrow_block = get_first_borrow_block_number(user)
+    
     current_block = block_number
-    blocks_for_liquidation = 0
     
     # Go back block by block until health factor > 1
-    while True:
-        # Go back one block
-        current_block -= 1
-        blocks_for_liquidation += 1
+	for current_block in range( block_number, first_borrow_block, -1 ):
         health_factor = get_health_factor(user, current_block)
         
-        # If health factor is valid and > 1, we stop
-        if health_factor and health_factor >= 1:
-            health_factor_after_one_block = current_block
+        # If health factor is valid and >= 1, we stop
+        if health_factor and health_factor >= 10**18:
             break
          
     # Update DataFrame with the results
-    liquidations_df.at[idx, 'health_factor_above_one_block'] = int(health_factor_after_one_block)
-    liquidations_df.at[idx, 'blocks_for_liquidation'] = int(blocks_for_liquidation)
-    
-    # Save the dataframe every 200 rows to the same CSV
-    if (idx + 1) % 200 == 0:
-        # Save in append mode, with header if first save
-        if header_needed:
-            liquidations_df.iloc[start_idx:idx+1].to_csv(checkpoint_file, mode='w', header=True, index=False)
-            header_needed = False  # Header is written once
-        else:
-            liquidations_df.iloc[start_idx:idx+1].to_csv(checkpoint_file, mode='a', header=False, index=False)
-        print(f"Checkpoint saved at row {idx + 1}")
+    liquidations_df.at[i, 'block_number_when_healthfactor_above_one'] = int(current_block)
+    liquidations_df.at[i, 'blocks_for_liquidation'] = int(block_number) - int(current_block)
 
-# Final save
-if header_needed:  # If we haven't saved before, include the header
-    liquidations_df.iloc[start_idx:].to_csv(checkpoint_file, mode='w', header=True, index=False)
-else:
-    liquidations_df.iloc[start_idx:].to_csv(checkpoint_file, mode='a', header=False, index=False)
-print("Final DataFrame saved.")
+liquidations_df.to_csv(output_file, index=False)
