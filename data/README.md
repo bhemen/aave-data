@@ -80,7 +80,7 @@ The [aave_v2_user_interests](https://upenn.box.com/s/sj6y194ab14yopx2k5npfh7rxvf
 ## Aave v2 user-level data
 
 ### Deposits
-The file [aavev2_Deposit.csv](https://upenn.box.com/s/1y1v6qaeuf2wxc26h3lpy2sc41r9z7ws) has all the deposits events emitted by the [Aave v2 Lending Pool contract](https://docs.aave.com/developers/v/2.0/the-core-protocol/lendingpool/ilendingpool)
+The file [aave_v2_Deposit.csv](https://upenn.box.com/s/1awq4ht1rdgjvo8lishdp6x748iznaga) has all the deposits events emitted by the [Aave v2 Lending Pool contract](https://docs.aave.com/developers/v/2.0/the-core-protocol/lendingpool/ilendingpool)
 
 This data set includes all the fields in the event itself:
 * `reserve` - The address of the token being deposited
@@ -99,7 +99,7 @@ In addition, the data set has
 * `date` - The date of the transaction (taken from the timestamp in the block)
 
 ### Borrows
-The file [aavev2_Borrow.csv](https://upenn.box.com/s/j5zrbra5t41z69ob8pt22jjo686tdhbg) contains all the borrow events emitted by the [Aave v2 Lending Pool contract](https://docs.aave.com/developers/v/2.0/the-core-protocol/lendingpool/ilendingpool)
+The file [aave_v2_Borrow.csv](https://upenn.box.com/s/hqy2rmxpoakw5lom4aumyn2bzz2lqmta) contains all the borrow events emitted by the [Aave v2 Lending Pool contract](https://docs.aave.com/developers/v/2.0/the-core-protocol/lendingpool/ilendingpool)
 
 This dataset includes all fields from the borrow event itself:
 * `reserve` - The address of the token being borrowed
