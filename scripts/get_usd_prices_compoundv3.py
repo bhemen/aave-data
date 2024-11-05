@@ -10,7 +10,7 @@ import os
 import numpy as np
 
 # Connect to Ethereum node
-api_url = ""
+api_url = "http://127.0.0.1:8545"
 provider = HTTPProvider(api_url)
 web3 = Web3(provider)
 
@@ -115,9 +115,8 @@ baseTokenPriceFeedAfter20915807 = {
 symbols = {Web3.to_checksum_address(addr): name for addr, name in symbols.items()}
 priceFeedBefore20346821 = {Web3.to_checksum_address(addr): Web3.to_checksum_address(feed) for addr, feed in priceFeedBefore20346821.items()}
 priceFeedAfter20346821 = {Web3.to_checksum_address(addr): Web3.to_checksum_address(feed) for addr, feed in priceFeedAfter20346821.items()}
-baseTokenPriceFeedBefore20915807 = Web3.to_checksum_address(baseTokenPriceFeedBefore20915807)
-baseTokenPriceFeedAfter20915807 = Web3.to_checksum_address(baseTokenPriceFeedAfter20915807)
-
+baseTokenPriceFeedAfter20915807 = {Web3.to_checksum_address(addr): Web3.to_checksum_address(feed) for addr, feed in baseTokenPriceFeedAfter20915807.items()}
+baseTokenPriceFeedBefore20915807 = {Web3.to_checksum_address(addr): Web3.to_checksum_address(feed) for addr, feed in baseTokenPriceFeedBefore20915807.items()}
 
 start_block_USDS = 20987551
 start_block_WETH = 16400710
